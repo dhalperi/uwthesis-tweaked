@@ -647,7 +647,7 @@ this space.
        \end{fullpage}
      \end{figure}
 \end{verbatim}
-\caption(a){This text would create a
+\caption{This text would create a
   double page figure in the two-side style.}
 \label{facing-caption}
 \end{figure}
@@ -667,8 +667,8 @@ this space.
        \end{xtrafullpage}
      \end{figure}
 \end{verbatim}
-\caption(b)[Generating a facing caption page]{This text would create a
-  facing caption page with the accompaning figure in the one-side style.}
+\caption[Generating a facing caption page]{This text would create a
+  facing caption page with the accompanying figure in the one-side style.}
 \end{figure}
  
 If instead you are using the one-side style,
@@ -739,40 +739,17 @@ table might be formatted.
 \subsection{Figure and Table Captions}
 Most captions are formatted with the \verb"\caption" macro as described 
 by Lamport\cite[sec. C.9]{Lbook}. 
-The uwthesis class extends this macro to allow
-continued figures and tables, and to provide multiple figures and
-tables with the same number, e.g., 3.1a, 3.1b, etc.
  
-To format the caption for the first part of
-a figure or table that cannot fit
-onto a single page use the standard form:
 \begin{demo}
 \\caption[\textit{toc}]\{\textit{text}\}
 \end{demo}
-To format the caption for the subsequent parts of 
-the figure or table 
-use this caption:
-\begin{demo}
-\\caption(-)\{(continued)\}
-\end{demo}
-It will keep the same number and the text of the caption will be 
-{\em(continued)}.
+The \textit{text} field is the text of the caption. The optional argument
+\textit{toc} controls the caption as it will appear in the List of Figures,
+Tables, etc.
 
-To format the caption for the first part of
-a multi-part figure or table
-use the format:
-\begin{demo}
-\\caption(a)[\textit{toc}]\{\textit{text}\}
-\end{demo}
-The figure or table will be lettered (with `a') as well as numbered.
-To format the caption for the subsequent parts of 
-the multi-part figure or table
-use the format:
-\begin{demo}
-\\caption(\textit{x})\{\textit{text}\}
-\end{demo}
-where {\em x} is {\tt b}, {\tt c}, \ldots.
-The parts will be lettered (with `b', `c', \ldots).
+To include multiple figures that are part of the same figure, use the
+\texttt{subfigure} package. This produces figures numbered such as 
+3.3(a), 3.3(b), etc.
 
 \section{The Preliminary Pages}
  
