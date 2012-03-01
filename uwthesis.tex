@@ -884,8 +884,17 @@ On a UNIX system he types
 \$\ pdflatex uwthesis
 \end{demo}
 
-and it generally works.
+and it generally works. However, \TeX\ updates its metadata for
+the Table of Contents, references to figures, etc., in stages.
+To ensure that all these fields are up to date, including the
+bibliography, the following sequence of commands usually works.
 
+\begin{demo}
+\$\ pdflatex uwthesis
+\$\ pdflatex uwthesis
+\$\ bibtex uwthesis
+\$\ pdflatex uwthesis
+\end{demo}
  
 \section{Printing}
  
