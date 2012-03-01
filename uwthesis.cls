@@ -582,7 +582,7 @@
 %
 \def\prelimpages{ % sets page numbering for the preliminary pages
    \pagestyle{empty} % will be {plain} at start of toc
-   \pagenumbering{roman}
+   \pagenumbering{alph}
    \setcounter{page}{1}
    \footskip 30\p@ % allowance for the roman page numbers
     \advance\textheight by-\footskip  
@@ -732,6 +732,7 @@
    \chapter*{\@textofToC\@mkboth{}{}}
    \pagestyle{plain}
    \thispagestyle{plain}
+   \pagenumbering{roman}
    \setcounter{page}{1}
    \hbox to\textwidth{\hfill Page}
    {\let\footnotemark\relax  % in case one is in the title
