@@ -1,0 +1,10 @@
+These are my changes to Jim Fox's excellent uwthesis.cls file and accompanying
+document source. Now that UW has gone to electronic-only submission, we should
+really be using the hyperref package to produce better electronic documents.
+
+Adding this package broke a bunch of things in Jim's version, which I fix here.
+
+This version is licensed under the APACHE-2.0 License as is Jim's original
+version. See the uwthesis.cls or uwthesis.tex file. Go to Jim's website:
+
+http://staff.washington.edu/fox/tex/thesis.shtml
