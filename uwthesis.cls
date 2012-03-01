@@ -156,7 +156,8 @@
 
 % ---------------
 
-\def\baselinestretch{1.5}    % not quite doublespaced
+%\def\baselinestretch{1.5}    % not quite doublespaced
+\usepackage[onehalfspacing]{setspace}
 
 \setcounter{totalnumber}{5}
 \setcounter{topnumber}{5}
