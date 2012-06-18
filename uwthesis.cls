@@ -25,6 +25,8 @@
 %
 % Version history
 %
+% 8.02,04/02/12, Slight mods to fixup title and other fornt pages
+% 8.01,03/21/12, Slight modification to title pages
 % 8.00,02/03/12, Revise for electronic submission.  Revised title, no signature nor quoteslip
 % 7.00,06/27/11, Fix output page bug, add copyright page
 % 6.14,07/24/08, Remove large font from abstract title
@@ -69,7 +71,7 @@
 % Documentation is in the companion document (uwthesis.tex)
 %
 
-\ProvidesClass{uwthesis}[2012/02/03]
+\ProvidesClass{uwthesis}[2012/04/02]
 \NeedsTeXFormat{LaTeX2e}
  
 %
@@ -562,21 +564,22 @@
 \def\School#1{\gdef\@School{#1}} \School{University of Washington}
 \def\GSchool#1{\gdef\@GSchool{#1}} \GSchool{Graduate School}
 \def\Degreetext#1{\gdef\@Degreetext{#1}} 
-  \Degreetext{A dissertation submitted in partial fulfillment\\
-    of the requirements for the degree of}
+  \Degreetext{A dissertation\\ submitted in partial fulfillment of the\\requirements for the degree of}
 \def\Programtext#1{\gdef\@Programtext{#1}}  
-       \Programtext{Program Authorized to Offer Degree:\ \ }
+       \Programtext{Program Authorized to Offer Degree: }
 
-\def\textofChair#1{\gdef\@textofChair{#1}}  
-       \textofChair{Chair of the Supervisory Committee}
+\def\textofCommittee#1{\gdef\@textofCommittee{#1}}  
+       \textofCommittee{Reading Committee: }
 \def\textofDate#1{\gdef\@textofDate{#1}}  \textofDate{Date}
+
+\def\textofChair#1{\gdef\@textofChair{#1}}
+       \textofChair{Chair of the Supervisory Committee: }
 
 \newcount\@Chair \@Chair0
 \def\Chair#1#2#3{
   \global\@namedef{C:\expandafter\the\@Chair}{#1}
   \global\@namedef{T:\expandafter\the\@Chair}{#2}
   \global\@namedef{D:\expandafter\the\@Chair}{#3}
-  \ifnum\@Chair>0\textofChair{Co-Chairs of the Supervisory Committee}\fi
   \global\advance\@Chair by1}
 
 
@@ -618,6 +621,7 @@
       \par\vskip\z@ plus4fill\relax
 
       % signers
+      \@textofCommittee \par 
       \count1=0
       \@whilenum \count1<\@Chair \do
        {\vskip12\p@ \baselineskip12pt
@@ -657,7 +661,7 @@
       \@Author
       \par\vskip1pc
        {\def\baselinestretch{1.0}\normalfont
-      \@textofChair:
+      \@textofChair
       \par 
       \count1=0
       \@whilenum \count1<\@Chair \do
