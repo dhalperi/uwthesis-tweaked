@@ -25,6 +25,7 @@
 %
 % Version history
 %
+% 8.03,06/19/12, fix textofChair for co-chairs
 % 8.02,04/02/12, Slight mods to fixup title and other fornt pages
 % 8.01,03/21/12, Slight modification to title pages
 % 8.00,02/03/12, Revise for electronic submission.  Revised title, no signature nor quoteslip
@@ -71,7 +72,7 @@
 % Documentation is in the companion document (uwthesis.tex)
 %
 
-\ProvidesClass{uwthesis}[2012/04/02]
+\ProvidesClass{uwthesis}[2012/06/19]
 \NeedsTeXFormat{LaTeX2e}
  
 %
@@ -580,6 +581,7 @@
   \global\@namedef{C:\expandafter\the\@Chair}{#1}
   \global\@namedef{T:\expandafter\the\@Chair}{#2}
   \global\@namedef{D:\expandafter\the\@Chair}{#3}
+  \ifnum\@Chair>0\textofChair{Co-Chairs of the Supervisory Committee:}\fi
   \global\advance\@Chair by1}
 
 
